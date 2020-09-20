@@ -8,7 +8,12 @@ const SushiContainer = (props) => {
       <div className="belt">
         {props.sushis.map((sushi) => {
           return (
-            <Sushi sushi={sushi} key={sushi.id} eatSushi={props.eatSushi} />
+            <Sushi
+              sushi={sushi}
+              key={sushi.id}
+              eatSushi={props.eatSushi}
+              eatenSushi={props.eatenSushi.includes(sushi)}
+            />
           );
         })}
         <MoreButton moreSushi={props.moreSushi} />

@@ -25,7 +25,7 @@ class App extends Component {
 
     if (!this.state.eatenSushi.includes(chosenSushi) && newMoney >= 0) {
       this.setState({
-        eaten: [...this.state.eatenSushi, chosenSushi],
+        eatenSushi: [...this.state.eatenSushi, chosenSushi],
         money: newMoney,
       });
     }
@@ -53,8 +53,9 @@ class App extends Component {
           moreSushi={this.moreSushi}
           sushis={this.displayFourSushis()}
           eatSushi={this.eatSushi}
+          eatenSushi={this.state.eatenSushi}
         />
-        <Table balance={this.state.money} />
+        <Table balance={this.state.money} eatenSushi={this.state.eatenSushi} />
       </div>
     );
   }
