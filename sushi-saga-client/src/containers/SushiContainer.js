@@ -14,6 +14,7 @@ const SushiContainer = (props) => {
             sushi={sushi}
             updateBalance={props.updateBalance}
             balance={props.balance}
+            eatSushi={props.eatSushi}
           />)}
         <MoreButton sushiToDisplay={props.sushiToDisplay} handelMoreSushi={props.handelMoreSushi} />
       </div>

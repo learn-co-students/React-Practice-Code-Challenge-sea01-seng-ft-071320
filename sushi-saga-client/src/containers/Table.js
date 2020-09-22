@@ -4,7 +4,7 @@ const Table = (props) => {
 
   const renderPlates = (array) => {
     return array.map((x, index) => {
-      return <div className="empty-plate" style={{ top: -7 * index }} />
+      return <div key={index} className="empty-plate" style={{ top: -7 * index }} />
     })
   }
 
@@ -17,12 +17,8 @@ const Table = (props) => {
       <div className="table">
         <div className="stack">
           {
-            /* 
-               renderPlates takes an array 
-               and renders an empty plate
-               for every element in the array
-            */
-            renderPlates([])
+            renderPlates(props.sushi.filter(sushi => sushi.eaten === true))
+
           }
         </div>
       </div>
